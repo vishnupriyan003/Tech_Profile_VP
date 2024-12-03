@@ -115,6 +115,17 @@ body {
   cursor: pointer;
 }
 
+/* Media query for larger screens */
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .profile-section {
+    top: 80px; /* Adjust to avoid excessive upward or downward shift */
+  }
+
+  .profile img {
+    width: 50px;
+    height: 50px; /* Increase the size of the profile image */
+  }
+}
 .photo {
   width: 150px; /* Adjust size */
   height: 150px;
