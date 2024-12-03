@@ -1,0 +1,538 @@
+/* Universal reset for box-sizing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  background: #000; /* Fallback for video loading */
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+  /* Navigation bar styles */
+  .navigationbar {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .navigationbar li {
+    margin: 0 20px;
+  }
+
+  .navigationbar a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .navigationbar a i {
+    margin-right: 8px; /* Add spacing between the icon and the text */
+  }
+
+  .navigationbar a:hover {
+    background-color: #89e7bb;
+    color: #fff;
+  }
+
+  /* Active link styling */
+  .navigationbar a.active {
+    background-color: #4e6d4a;
+    color: white;
+  }
+
+  /* Section styles */
+  .section {
+    padding: 100px 20px;
+    margin-top: 70px;
+  }
+
+  .section-content {
+    max-width: 800px;
+    margin: -200px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+/* Fullscreen video styles */
+#myVideo {
+  opacity: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Profile Image Styling */
+.profile-section {
+  position: fixed; /* Fix the profile image in the top-right corner */
+  top: 5px;
+  right: 20px;
+  z-index: 1100; /* Ensure the profile section is above the navbar */
+}
+
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.photo {
+  width: 150px; /* Adjust size */
+  height: 150px;
+  border-radius: 50%; /* Circular photo */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 100px auto; /* Center horizontally and add space below */
+  display: block; /* Required for margin auto centering */
+  border: 5px solid white; /* Border around photo */
+  position: relative;
+  top: 20px; /* Push photo down slightly */
+}
+  
+/* Profile Content Styles */
+.content1 {
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin: 100px auto;
+}
+
+.content1 h1 {
+  font-size: 36px;
+}
+
+.content1 h2 {
+  font-size: 24px;
+}
+
+.content1 p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Title section */
+.title {
+  background: rgba(180, 180, 180, 0.717);
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+  margin: 40px auto;
+}
+
+/* Content section */
+.content2-container {
+  margin: 40px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.content2 {
+  background: rgba(180, 180, 180, 0.717);
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+/* General Section Styles */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #4CAF50;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Card Layout */
+.info-card {
+  background-color: rgba(255, 255, 255, 0.712);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #2d7530;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Skill List Styles */
+.skill-list, .activity-list, .achievement-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-list li, .activity-list li, .achievement-list li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #444;
+}
+
+
+/* Section-specific styles */
+.skills-section {
+  padding: 20px;
+}
+
+.activities-section {
+  background-color: #f9f9f9ec;
+  padding: 20px;
+}
+
+.achievements-section {
+  background-color: #eaeaeaeb;
+  padding: 20px;
+}
+
+
+/* Academic Profile Section */
+.academic-profile {
+  margin-top: 80px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.education-section {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.education-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #89e7bb; /* Light greenish color */
+  margin-bottom: 15px;
+}
+
+.education-details {
+  font-size: 18px;
+  color: #ccc; /* Light gray for details */
+  line-height: 1.6;
+}
+
+.education-item {
+  margin-bottom: 15px;
+}
+
+.education-item span {
+  font-weight: bold;
+  color: #ffffffdf; /* White color for key labels */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .academic-profile {
+    width: 95%;
+  }
+}
+
+/* Image Gallery Styles */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.column {
+  width: 24%;
+  padding: 10px;
+}
+
+.column img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.column img:hover {
+  transform: scale(1.1);
+}
+
+/* Full-size Image Display Container */
+.image-display-container {
+  display: none;
+  width: 40%;
+  margin: 30px auto;
+  text-align: center;
+  position: relative;
+}
+
+.full-image img {
+  width: 100%;
+  border: 5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Text Below the Image */
+#image-text {
+  font-size: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+/* Styling for the download resume section */
+.download-section {
+  background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  color: #fff; /* White text */
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 50px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Styling */
+.download-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #89e7bb; /* Light green to match the theme */
+  margin-bottom: 20px;
+}
+
+/* Resume Preview Images */
+.resume-preview-images {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.resume-preview-images img {
+  width: 45%; /* Adjust size to fit the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+.download-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.download-button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Card-Style Feedback Section */
+.feedback-section-card {
+  background: rgba(0, 0, 0, 0.5); /* Dark background with slight transparency */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft light border */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow with higher opacity for contrast */
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Heading Styling */
+.feedback-content h2 {
+  color: #89e7bb; /* Light green color to match the active link color */
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+/* Text Styling */
+.feedback-content p {
+  color: #fff; /* White text for better contrast */
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Feedback Button Styling */
+.feedback-button-card {
+  background-color: #4e6d4a; /* Deep green to match the navbar active link */
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.feedback-button-card:hover {
+  background-color: #89e7bb; /* Lighter green on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for better effect */
+  transform: translateY(-3px);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 16px;
+  position: relative;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.footer-content a {
+  color: #89e7bb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+  color: #fff;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .content1, .title, .content2 {
+    width: 95%;
+  }
+}
