@@ -17,25 +17,35 @@
     Your browser does not support HTML5 video.
   </video>
   
-   <!-- Navigation Bar -->
-   <ul class="navigationbar">
+  <ul class="navigationbar">
     <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
     <li><a href="#career" class="nav-link"><i class="fas fa-briefcase"></i> Career</a></li>
-    <li><a href="#feedback-section" class="nav-link"><i class="fas fa-comments"></i> Feedback</a></li>  <!-- Updated -->
+    <li><a href="#contact" class="nav-link"><i class="fas fa-comments"></i> Contact</a></li>
   </ul>
   
+  <!-- Hamburger Menu for smaller screens -->
+  <div class="hamburger-menu" onclick="toggleMobileMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+  <!-- Mobile Menu (hidden by default) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="#career" class="nav-link"><i class="fas fa-briefcase"></i> Career</a>
+    <a href="#contact" class="nav-link"><i class="fas fa-comments"></i> Contact</a>
+  </div>
   <div class="profile-section">
     <a href="#profile" class="profile">
       <img src="./image/logo.png" alt="Profile Image">
     </a>
   </div>
-
-  <img src="./image/my photo.jpg" alt="Your Photo" class="photo">
-
         <!--Home page-->
 
   <section id="home" class="section">
     <div class="section-content">
+      <img src="./image/my photo.jpg" alt="Your Photo" class="photo">
       <!-- Profile Content -->
       <div class="content1">
         <h1>VISHNUPRIYAN</h1>
@@ -108,7 +118,7 @@
         </div>
 
         <!-- Co-Curricular Activities Section -->
-        <div class="content-section activities-section" id="contact">
+        <div class="content-section activities-section" >
             <div class="section-title">Co-Curricular Activities</div>
             <div class="info-card">
                 <div class="card-title">Activities & Engagements</div>
@@ -123,7 +133,7 @@
         </div>
 
         <!-- Achievements Section -->
-        <div class="content-section achievements-section" id="feedback">
+        <div class="content-section achievements-section">
             <div class="section-title">Achievements</div>
             <div class="info-card">
                 <div class="card-title">Certifications</div>
@@ -221,33 +231,18 @@
       Download Resume
   </a>
 </div>
-<!-- Feedback Section -->
-  <section id="feedback-section" class="section">
-    <div class="section-content">
-      <div class="feedback-section-card">
-        <div class="feedback-content">
-          <h2>Help Us Improve!</h2>
-          <p>Take just 2 minutes to make a big difference. Fill out our quick feedback form and help us grow!</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdREKn0WPnFra6LOOzrw7bzNtnimGrLapRrtBddF-_06x_aew/viewform?usp=sf_link" 
-             target="_blank" class="feedback-button-card">
-            Complete Feedback Form
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
   
   <!-- Footer Section -->
-      <footer class="footer">
-        <div class="footer-content">
-          <p>Connect with me:</p>
-          <p>
-            <a href="https://www.linkedin.com/in/vishnupriyan-r-727538252/?trk=public-profile-join-page" target="_blank">LinkedIn</a> | 
-            <a href="mailto:vishnupriyanrenganathan@gmail.com">Email</a> | 
-            Contact: +91 9629760070
-          </p>
-        </div>
-      </footer>
+  <footer id="contact" class="unique-footer">
+    <div class="footer-content">
+      <p>Connect with me:</p>
+      <p>
+        <a href="https://www.linkedin.com/in/vishnupriyan-r-727538252/?trk=public-profile-join-page" target="_blank">LinkedIn</a> | 
+        <a href="mailto:vishnupriyanrenganathan@gmail.com">Email</a> | 
+        Contact: +91 9629760070
+      </p>
+    </div>
+  </footer>
   
   <script src="script.js"></script>
 </body>
