@@ -19,54 +19,110 @@ body {
   min-height: 100vh;
 }
 
-  /* Navigation bar styles */
+.navigationbar {
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.navigationbar li {
+  margin: 0 20px;
+}
+
+.navigationbar a {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navigationbar a i {
+  margin-right: 8px; /* Add spacing between the icon and the text */
+}
+
+.navigationbar a:hover {
+  background-color: #89e7bb;
+  color: #fff;
+}
+
+/* Active link styling */
+.navigationbar a.active {
+  background-color: #4e6d4a;
+  color: white;
+}
+
+/* Media Query for smaller screens - Show Hamburger Menu */
+@media (max-width: 768px) {
   .navigationbar {
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none; /* Hide the navigation bar on small screens */
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show the hamburger icon */
     position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+  }
+
+  .hamburger-menu div {
+    height: 3px;
+    background-color: #000;
+    border-radius: 3px;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-  }
-
-  .navigationbar li {
-    margin: 0 20px;
-  }
-
-  .navigationbar a {
-    display: flex;
-    align-items: center;
-    color: #000000;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 18px;
+    border-radius: 8px;
+    z-index: 1001;
+    width: 200px;
+    padding: 10px;
     text-align: center;
+  }
+
+  .mobile-menu a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
     font-weight: bold;
+    color: #000;
+    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .navigationbar a i {
-    margin-right: 8px; /* Add spacing between the icon and the text */
-  }
-
-  .navigationbar a:hover {
+  .mobile-menu a:hover {
     background-color: #89e7bb;
     color: #fff;
   }
+}
 
-  /* Active link styling */
-  .navigationbar a.active {
-    background-color: #4e6d4a;
-    color: white;
-  }
 
   /* Section styles */
   .section {
@@ -114,7 +170,6 @@ body {
   object-fit: cover;
   cursor: pointer;
 }
-
 /* Media query for larger screens */
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
   .profile-section {
@@ -126,6 +181,7 @@ body {
     height: 50px; /* Increase the size of the profile image */
   }
 }
+
 .photo {
   width: 150px; /* Adjust size */
   height: 150px;
@@ -450,60 +506,10 @@ body {
   transform: translateY(-3px);
 }
 
-/* Card-Style Feedback Section */
-.feedback-section-card {
-  background: rgba(0, 0, 0, 0.5); /* Dark background with slight transparency */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft light border */
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow with higher opacity for contrast */
-  margin: 50px auto;
-  max-width: 600px;
-  padding: 30px;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
 
-/* Heading Styling */
-.feedback-content h2 {
-  color: #89e7bb; /* Light green color to match the active link color */
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-transform: capitalize;
-}
-
-/* Text Styling */
-.feedback-content p {
-  color: #fff; /* White text for better contrast */
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Feedback Button Styling */
-.feedback-button-card {
-  background-color: #4e6d4a; /* Deep green to match the navbar active link */
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 25px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Button Hover Effect */
-.feedback-button-card:hover {
-  background-color: #89e7bb; /* Lighter green on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for better effect */
-  transform: translateY(-3px);
-}
 
 /* Footer Styles */
-.footer {
+.unique-footer {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   text-align: center;
@@ -515,20 +521,20 @@ body {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.footer-content {
+.unique-footer .footer-content {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-.footer-content a {
+.unique-footer .footer-content a {
   color: #89e7bb;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.footer-content a:hover {
+.unique-footer .footer-content a:hover {
   color: #fff;
 }
 
