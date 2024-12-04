@@ -1,14 +1,21 @@
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  if (menu.style.display === 'block') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'block';
+  }
+}
 // Select all sections and navigation links
-const sections = document.querySelectorAll(".section, #feedback-section"); // Include feedback section
+const sections = document.querySelectorAll(".section, #contact");
 const navLinks = document.querySelectorAll(".nav-link");
 
-// Handle scroll event to highlight active section link
+// Scroll event to highlight active section link
 window.addEventListener("scroll", () => {
   let current = "";
 
-  // Loop through each section to determine the current section based on scroll position
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100; // Adjust for navbar height and a small offset
+    const sectionTop = section.offsetTop - 100;
     const sectionHeight = section.offsetHeight;
 
     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
@@ -16,25 +23,31 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  // Special case for the last section (Feedback/Footer section)
+  // Handle footer explicitly
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-    current = "feedback-section"; // Corrected and ensured it matches the HTML ID
+    current = "contact";
   }
 
-  // Update active class on navigation links
   navLinks.forEach((link) => {
     link.classList.remove("active");
     if (link.getAttribute("href").substring(1) === current) {
       link.classList.add("active");
     }
   });
+});
 
-  // Debugging logs to ensure the logic works correctly
-  console.log("Current section:", current);
+// Add smooth scrolling for navigation links
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 });
 
 // Ensure the logic is also run on page load
-window.onload = function() {
+window.onload = function () {
   console.log("Page has been loaded!");
   window.dispatchEvent(new Event("scroll")); // Trigger scroll event on load to highlight the correct section
 };
